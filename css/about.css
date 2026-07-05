@@ -1,0 +1,73 @@
+/* ══════════════════
+   ABOUT
+══════════════════ */
+.about { background: var(--bg-2); }
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 0.78fr 1.6fr;
+  gap: 4.5rem; align-items: start;
+}
+
+.about__img-card {
+  border-radius: var(--radius-lg); overflow: hidden;
+  background: var(--bg); box-shadow: var(--shadow-lg); position: relative;
+}
+.about__img-card img {
+  width: 100%; aspect-ratio: 3/4; object-fit: cover;
+  object-position: center top;
+  filter: grayscale(10%) contrast(1.03);
+  display: block;
+  transition: filter 0.45s var(--ease), transform 0.55s var(--ease);
+}
+.about__img-card:hover img { filter: grayscale(0%) contrast(1); transform: scale(1.025); }
+
+.about__img-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+  color: #fff; padding: 3rem 1.35rem 1.35rem;
+  display: flex; flex-direction: column; gap: 0.1rem;
+}
+.about__img-label span:first-child { font-size: 0.86rem; font-weight: var(--fw-bold); letter-spacing: -0.01em; }
+.about__img-label span:not(:first-child) { font-size: 0.68rem; font-weight: var(--fw-medium); opacity: 0.65; }
+
+.about__body {
+  font-size: 0.99rem; color: var(--text-muted);
+  line-height: 1.85; margin-bottom: 1.85rem; max-width: 55ch;
+}
+.about__body strong { color: var(--text); font-weight: var(--fw-semibold); }
+
+.about__skills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 2rem; }
+.about__cta    { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.75rem; }
+
+.about__info-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+
+.info-card {
+  background: var(--card-bg); border: 1px solid var(--card-border);
+  border-radius: var(--radius-md); padding: 1.35rem 1.5rem;
+  transition: box-shadow 0.28s var(--ease), transform 0.28s var(--ease);
+}
+.info-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+.info-card__title {
+  font-size: 0.62rem; font-weight: var(--fw-bold);
+  text-transform: uppercase; letter-spacing: 0.13em;
+  color: var(--text-faint); margin-bottom: 0.85rem;
+  padding-bottom: 0.55rem; border-bottom: 1px solid var(--border);
+}
+.info-card__list { display: flex; flex-direction: column; gap: 0.38rem; }
+.info-card__list li {
+  font-size: 0.81rem; color: var(--text-muted);
+  line-height: 1.5; padding-left: 0.8rem; position: relative;
+}
+.info-card__list li::before {
+  content: '·'; position: absolute; left: 0;
+  color: var(--accent); font-weight: var(--fw-bold);
+}
+
+@media (max-width: 940px) {
+  .about__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  /* Keep portrait ratio on mobile so face is fully visible */
+  .about__img-card img { aspect-ratio: 3/4; max-height: 460px; object-fit: cover; }
+}
+@media (max-width: 520px) { .about__info-cards { grid-template-columns: 1fr; } }
