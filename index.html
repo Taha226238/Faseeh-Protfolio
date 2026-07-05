@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Faseeh — Front-End Developer</title>
+  <meta name="description" content="Muhammad Faseeh — Front-End Developer. I design & build modern web experiences." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#F7F6F3" />
+  <style>body{background:#F7F6F3;}</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/cursor.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="css/experience.css" />
+  <link rel="stylesheet" href="css/education.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/loader.css" />
+</head>
+<body class="light-theme" data-theme="light">
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__ring" id="cursorRing"></div>
+    <div class="cursor__inner" id="cursorDot"></div>
+    <span class="cursor__label">View</span>
+  </div>
+
+  <!-- Page Loader -->
+  <div class="loader" id="loader" role="status" aria-label="Loading portfolio">
+    <div class="loader__inner">
+      <div class="loader__text">
+        <span class="loader__hi">Hi, I am</span>
+        <strong class="loader__name">Muhammad Faseeh.</strong>
+      </div>
+      <div class="loader__bar-track" aria-hidden="true">
+        <div class="loader__bar" id="loaderBar"></div>
+      </div>
+      <span class="loader__pct" id="loaderPct" aria-hidden="true">0%</span>
+    </div>
+  </div>
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__container">
+      <a href="#hero" class="nav__logo" aria-label="Muhammad Faseeh home"><span class="nav__logo-dot" aria-hidden="true"></span>M Faseeh</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks" role="list">
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#experience" class="nav__link">Experience</a></li>
+        <li><a href="#education" class="nav__link">Education</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
+          <span class="theme-toggle__icon" aria-hidden="true">◐</span>
+        </button>
+        <a href="#contact" class="btn btn--sm btn--solid">Hire Me</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero" aria-label="Hero">
+    <div class="container hero__container">
+      <div class="hero__text reveal-up">
+        <span class="hero__eyebrow">Minimal. Fast. Built for impact.</span>
+        <h1 class="hero__headline">
+          <span class="t-light">Hi, I am</span>
+          <em class="hero__name">Muhammad Faseeh.</em>
+        </h1>
+        <p class="hero__sub">I design &amp; build <span class="w-light">modern</span> web experiences.</p>
+        <p class="hero__desc">I focus on clean UI, scalable front-end architecture, and thoughtful user journeys. Let's create something that feels effortless.</p>
+        <div class="hero__cta">
+          <a href="#projects" class="btn btn--solid magnetic">View Projects</a>
+          <a href="#contact" class="btn btn--outline magnetic">Contact Me</a>
+        </div>
+        <div class="hero__stats" aria-label="Key statistics">
+          <div class="hero__stat">
+            <span class="hero__stat-num" data-target="4">0<span class="hero__stat-suffix">+</span></span>
+            <span class="hero__stat-label">Years Building</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-num" data-target="25">10<span class="hero__stat-suffix">+</span></span>
+            <span class="hero__stat-label">Projects</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-num" data-target="10">2<span class="hero__stat-suffix">+</span></span>
+            <span class="hero__stat-label">Client Teams</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__media reveal-right">
+        <div class="hero__img-wrap" aria-hidden="true">
+          <img src="assets/images/F22.png" alt="Muhammad Faseeh — Front-End Developer, portrait photo" class="hero__img" loading="eager" onerror="this.src='assets/images/placeholder-portrait.svg'" />
+        </div>
+        <div class="hero__badge" aria-hidden="true">
+          <span style="font-size:1.4rem;">🧑‍💻</span>
+          <div class="hero__badge-text">
+            <strong>Front-End Dev</strong>
+            <span>Based in UAE</span>
+          </div>
+        </div>
+        <div class="hero__floating-card" role="complementary" aria-label="Availability status">
+          <div class="floating-card__header">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Available for opportunities</span>
+          </div>
+          <p>Open to freelance and full-time roles. Fast responses, clean work, clear communication.</p>
+          <div class="floating-card__tabs" role="tablist">
+            <button class="tab-btn tab-btn--active" role="tab" aria-selected="true" data-tab="who">Who I am</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="what">What I do</button>
+          </div>
+          <div class="tab-content" id="tab-who">A front-end developer with a passion for design-driven engineering.</div>
+          <div class="tab-content tab-content--hidden" id="tab-what">I build fast, accessible UIs with clean code and clear architecture.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee__track">
+      <span>HTML &nbsp;·&nbsp; CSS &nbsp;·&nbsp; JavaScript &nbsp;·&nbsp; UI Architecture &nbsp;·&nbsp; Accessibility &nbsp;·&nbsp; Performance &nbsp;·&nbsp; Figma &nbsp;·&nbsp; React &nbsp;·&nbsp; Python &nbsp;·&nbsp; UX Design &nbsp;·&nbsp;</span>
+      <span aria-hidden="true">HTML &nbsp;·&nbsp; CSS &nbsp;·&nbsp; JavaScript &nbsp;·&nbsp; UI Architecture &nbsp;·&nbsp; Accessibility &nbsp;·&nbsp; Performance &nbsp;·&nbsp; Figma &nbsp;·&nbsp; React &nbsp;·&nbsp; Python &nbsp;·&nbsp; UX Design &nbsp;·&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about" aria-label="About Me">
+    <div class="container about__container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">About</span>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-sub"><em>Minimal design, deliberate details, and engineering that scales.</em></p>
+      </div>
+      <div class="about__grid">
+        <div class="about__media reveal-left">
+          <div class="about__img-card">
+            <img src="assets/images/F22.png" alt="Muhammad Faseeh — Front-End Developer" loading="lazy" onerror="this.src='assets/images/placeholder-portrait.svg'" />
+            <div class="about__img-label">
+              <span>Muhammad Faseeh</span>
+              <span>Front-End Developer</span>
+              <span>2026</span>
+            </div>
+          </div>
+        </div>
+        <div class="about__content reveal-right">
+          <p class="about__body">I build interfaces that look great, feel smooth, and remain maintainable as products evolve. My approach blends design sensibility with practical engineering: strong component boundaries, accessible interactions, and performance-aware patterns. I enjoy turning complex requirements into simple flows so users understand value instantly.</p>
+          <div class="about__skills" aria-label="Skills">
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+            <span class="pill">Javascript</span>
+            <span class="pill">Accessibility</span>
+            <span class="pill">UI Architecture</span>
+            <span class="pill">Performance</span>
+          </div>
+          <div class="about__cta">
+            <a href="#projects" class="btn btn--solid magnetic">See work</a>
+            <a href="#contact" class="btn btn--outline magnetic">Let's talk</a>
+          </div>
+          <div class="about__info-cards">
+            <div class="info-card reveal-up">
+              <h3 class="info-card__title">Expertise</h3>
+              <ul class="info-card__list" role="list">
+                <li>On-site Troubleshooting</li>
+                <li>Logistics &amp; Client Liaison</li>
+                <li>Crowd Control &amp; Safety Protocols</li>
+                <li>Registration Platforms</li>
+                <li>Social Media Strategy</li>
+                <li>Multi-project Management</li>
+                <li>Forex Market Analysis</li>
+              </ul>
+            </div>
+            <div class="info-card reveal-up">
+              <h3 class="info-card__title">Languages</h3>
+              <ul class="info-card__list" role="list">
+                <li>English</li>
+                <li>Urdu</li>
+                <li>Arabic</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="projects" id="projects" aria-label="Projects">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Work</span>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-sub"><em>A selection of work focused on UX, UI systems, and real-world delivery.</em></p>
+      </div>
+      <div class="projects__controls" aria-label="Carousel controls">
+        <button class="carousel-btn" id="prevBtn" aria-label="Previous project">&#8592;</button>
+        <button class="carousel-btn" id="pauseBtn" aria-label="Pause autoplay">&#9646;&#9646;</button>
+        <button class="carousel-btn" id="nextBtn" aria-label="Next project">&#8594;</button>
+      </div>
+      <div class="carousel" id="carousel" role="region" aria-label="Project cards carousel">
+        <div class="carousel__track" id="carouselTrack">
+
+          <article class="project-card" tabindex="0" aria-label="Car Rental Website project">
+            <div class="project-card__img-wrap">
+              <img src="assets/images/5.jpeg" alt="Car Rental Website screenshot" loading="lazy" onerror="this.src='assets/images/placeholder-project.svg'" />
+              <div class="project-card__img-label" aria-hidden="true">
+                <span class="project-card__img-cat">Website</span>
+                <span class="project-card__img-title">Car Rental Website</span>
+              </div>
+              <div class="project-card__overlay"><span>View</span></div>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__tag">Website</span>
+              <h3 class="project-card__title">Car Rental Website</h3>
+              <p class="project-card__desc">Fast, Easy, Reliable car booking</p>
+              <div class="project-card__stack">
+                <span class="pill pill--sm">JavaScript</span>
+                <span class="pill pill--sm">CSS Grid</span>
+                <span class="pill pill--sm">HTML</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="https://youtu.be/9brQCCb3x-M?si=cdHh0SUDsLOaRqch" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--solid" aria-label="View Car Rental Website demo (opens in new tab)">Details</a>
+                <a href="https://youtu.be/9brQCCb3x-M?si=cdHh0SUDsLOaRqch" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--outline" aria-label="Watch Car Rental Website demo on YouTube (opens in new tab)">Watch</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" tabindex="0" aria-label="Car Rental App project">
+            <div class="project-card__img-wrap">
+              <img src="assets/images/6.jpeg" alt="Car Rental App mockup" loading="lazy" onerror="this.src='assets/images/placeholder-project.svg'" />
+              <div class="project-card__img-label" aria-hidden="true">
+                <span class="project-card__img-cat">App</span>
+                <span class="project-card__img-title">Car Rental App</span>
+              </div>
+              <div class="project-card__overlay"><span>View</span></div>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__tag">App</span>
+              <h3 class="project-card__title">Car Rental App</h3>
+              <p class="project-card__desc">Convenient, mobile car booking experience</p>
+              <div class="project-card__stack">
+                <span class="pill pill--sm">Figma</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="https://youtu.be/lG2Mgq_-4e0?si=iWkQ5WzDfT8zR19-" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--solid" aria-label="View Car Rental App demo (opens in new tab)">Details</a>
+                <a href="https://youtu.be/lG2Mgq_-4e0?si=iWkQ5WzDfT8zR19-" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--outline" aria-label="Watch Car Rental App demo on YouTube (opens in new tab)">Watch</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" tabindex="0" aria-label="F1 Strategy project">
+            <div class="project-card__img-wrap">
+              <img src="assets/images/3.jpeg" alt="F1 Strategy dataset visualization" loading="lazy" onerror="this.src='assets/images/placeholder-project.svg'" />
+              <div class="project-card__img-label" aria-hidden="true">
+                <span class="project-card__img-cat">Kaggle</span>
+                <span class="project-card__img-title">F1 Strategy</span>
+              </div>
+              <div class="project-card__overlay"><span>View</span></div>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__tag">Kaggle</span>
+              <h3 class="project-card__title">F1 Strategy</h3>
+              <p class="project-card__desc">Datasets, ML &amp; analytics for race strategy</p>
+              <div class="project-card__stack">
+                <span class="pill pill--sm">Python</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="https://youtu.be/Yn1AXiXSabA?si=2ElmsuFw-DmHblqJ" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--solid" aria-label="View F1 Strategy demo (opens in new tab)">Details</a>
+                <a href="https://youtu.be/Yn1AXiXSabA?si=2ElmsuFw-DmHblqJ" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--outline" aria-label="Watch F1 Strategy demo on YouTube (opens in new tab)">Watch</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" tabindex="0" aria-label="Flourish project">
+            <div class="project-card__img-wrap">
+              <img src="assets/images/2.jpeg" alt="Flourish data visualization dashboard" loading="lazy" onerror="this.src='assets/images/placeholder-project.svg'" />
+              <div class="project-card__img-label" aria-hidden="true">
+                <span class="project-card__img-cat">Data Viz</span>
+                <span class="project-card__img-title">Flourish</span>
+              </div>
+              <div class="project-card__overlay"><span>View</span></div>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__tag">Data Viz</span>
+              <h3 class="project-card__title">Flourish</h3>
+              <p class="project-card__desc">Interactive dashboards &amp; storytelling for plastic pollution</p>
+              <div class="project-card__stack">
+                <span class="pill pill--sm">Flourish</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="https://youtu.be/_cAPliX6Sfg?si=v1hxtq61yM8FcoIX" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--solid" aria-label="View Flourish demo (opens in new tab)">Details</a>
+                <a href="https://youtu.be/_cAPliX6Sfg?si=v1hxtq61yM8FcoIX" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--outline" aria-label="Watch Flourish demo on YouTube (opens in new tab)">Watch</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" tabindex="0" aria-label="Fitness CoachBot project">
+            <div class="project-card__img-wrap">
+              <img src="assets/images/1.jpeg" alt="Fitness CoachBot chat interface" loading="lazy" onerror="this.src='assets/images/placeholder-project.svg'" />
+              <div class="project-card__img-label" aria-hidden="true">
+                <span class="project-card__img-cat">Chat Bot</span>
+                <span class="project-card__img-title">Fitness CoachBot</span>
+              </div>
+              <div class="project-card__overlay"><span>View</span></div>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__tag">Chat Bot</span>
+              <h3 class="project-card__title">Fitness CoachBot</h3>
+              <p class="project-card__desc">AI assistant with smart conversational replies</p>
+              <div class="project-card__stack">
+                <span class="pill pill--sm">Dialog Flow</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="https://youtu.be/WSsa6nvB5JY?si=s1wUTfCY5kFqRrJl" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--solid" aria-label="View Fitness CoachBot demo (opens in new tab)">Details</a>
+                <a href="https://youtu.be/WSsa6nvB5JY?si=s1wUTfCY5kFqRrJl" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--outline" aria-label="Watch Fitness CoachBot demo on YouTube (opens in new tab)">Watch</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" tabindex="0" aria-label="AUTOFIX WEB project">
+            <div class="project-card__img-wrap">
+              <img src="assets/images/4.jpeg" alt="AUTOFIX WEB car repair booking platform" loading="lazy" onerror="this.src='assets/images/placeholder-project.svg'" />
+              <div class="project-card__img-label" aria-hidden="true">
+                <span class="project-card__img-cat">Website</span>
+                <span class="project-card__img-title">AUTOFIX WEB</span>
+              </div>
+              <div class="project-card__overlay"><span>View</span></div>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__tag">Website</span>
+              <h3 class="project-card__title">AUTOFIX WEB</h3>
+              <p class="project-card__desc">Car repair &amp; maintenance booking platform</p>
+              <div class="project-card__stack">
+                <span class="pill pill--sm">HTML</span>
+                <span class="pill pill--sm">CSS</span>
+                <span class="pill pill--sm">JavaScript</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="https://youtu.be/GNHlarUQjBc?si=kQ2erRKT5rzJlZ32" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--solid" aria-label="View AUTOFIX WEB demo (opens in new tab)">Details</a>
+                <a href="https://youtu.be/GNHlarUQjBc?si=kQ2erRKT5rzJlZ32" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--outline" aria-label="Watch AUTOFIX WEB demo on YouTube (opens in new tab)">Watch</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section class="experience" id="experience" aria-label="Experience">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">History</span>
+        <h2 class="section-title">Experience</h2>
+        <p class="section-sub"><em>Roles where I shipped user-facing features and strengthened UI foundations.</em></p>
+      </div>
+      <ol class="timeline" aria-label="Work experience timeline">
+
+        <li class="timeline__item reveal-up">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__content">
+            <div class="timeline__header">
+              <h3 class="timeline__role">Operations Specialist</h3>
+              <span class="timeline__date">2026</span>
+            </div>
+            <p class="timeline__company">Gulfood Exhibition — Dubai World Trade Centre</p>
+            <ul class="timeline__bullets" role="list">
+              <li>Coordinated logistics across multiple exhibition halls</li>
+              <li>Managed on-site troubleshooting for vendors and attendees</li>
+              <li>Liaised with client teams to ensure smooth operations</li>
+              <li>Handled crowd flow and safety protocol enforcement</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item reveal-up">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__content">
+            <div class="timeline__header">
+              <h3 class="timeline__role">Event Operations Coordinator</h3>
+              <span class="timeline__date">2026</span>
+            </div>
+            <p class="timeline__company">Grizzly Mining Emerald Auction</p>
+            <ul class="timeline__bullets" role="list">
+              <li>Managed auction registration platforms and attendee databases</li>
+              <li>Coordinated concierge services for high-value clients</li>
+              <li>Ensured operational excellence across auction sessions</li>
+              <li>Supported real-time logistics and communication flows</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item reveal-up">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__content">
+            <div class="timeline__header">
+              <h3 class="timeline__role">Crowd Management Coordinator</h3>
+              <span class="timeline__date">2026</span>
+            </div>
+            <p class="timeline__company">Dubai Marathon</p>
+            <ul class="timeline__bullets" role="list">
+              <li>Managed crowd flow for a large-scale marathon event</li>
+              <li>Enforced safety protocols across designated zones</li>
+              <li>Coordinated with marshals and zone leads in real time</li>
+              <li>Facilitated smooth participant entry and exit procedures</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item reveal-up">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__content">
+            <div class="timeline__header">
+              <h3 class="timeline__role">Auction Concierge</h3>
+              <span class="timeline__date">Dec 2025</span>
+            </div>
+            <p class="timeline__company">AHM Events — Alberta</p>
+            <ul class="timeline__bullets" role="list">
+              <li>Provided premium concierge service to auction bidders</li>
+              <li>Managed guest relations and VIP coordination</li>
+              <li>Supported registration and bidder verification systems</li>
+              <li>Maintained smooth event floor operations throughout</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item reveal-up">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__content">
+            <div class="timeline__header">
+              <h3 class="timeline__role">Crowd Management Coordinator</h3>
+              <span class="timeline__date">Mar 2025</span>
+            </div>
+            <p class="timeline__company">SS Events</p>
+            <ul class="timeline__bullets" role="list">
+              <li>Led crowd management operations across event zones</li>
+              <li>Deployed safety protocols and emergency response plans</li>
+              <li>Coordinated with security and logistics teams on-site</li>
+              <li>Managed volunteer briefings and zone assignments</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item reveal-up">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__content">
+            <div class="timeline__header">
+              <h3 class="timeline__role">Logistics Coordinator</h3>
+              <span class="timeline__date">2025</span>
+            </div>
+            <p class="timeline__company">Emirates Airline Festival of Literature</p>
+            <ul class="timeline__bullets" role="list">
+              <li>Coordinated logistics for a high-profile literary festival</li>
+              <li>Managed venue setups, breakdowns, and material handling</li>
+              <li>Liaised with authors, publishers, and event partners</li>
+              <li>Oversaw registration desk operations and queuing systems</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item reveal-up">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__content">
+            <div class="timeline__header">
+              <h3 class="timeline__role">Traffic Marshall / Zone Logistics</h3>
+              <span class="timeline__date">2024</span>
+            </div>
+            <p class="timeline__company">RAK Half Marathon</p>
+            <ul class="timeline__bullets" role="list">
+              <li>Directed traffic and managed pedestrian flow across zones</li>
+              <li>Ensured participant safety along the marathon route</li>
+              <li>Coordinated with zone leads for seamless logistics</li>
+              <li>Responded to on-ground incidents and route diversions</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item reveal-up">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__content">
+            <div class="timeline__header">
+              <h3 class="timeline__role">Event Specialist</h3>
+              <span class="timeline__date">2024</span>
+            </div>
+            <p class="timeline__company">VOX Cinemas</p>
+            <ul class="timeline__bullets" role="list">
+              <li>Managed event-specific cinema operations and guest experience</li>
+              <li>Coordinated special screenings and promotional events</li>
+              <li>Handled guest inquiries and on-site customer relations</li>
+              <li>Supported social media content capture during events</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item reveal-up">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__content">
+            <div class="timeline__header">
+              <h3 class="timeline__role">Front-of-House Lead</h3>
+              <span class="timeline__date">2023</span>
+            </div>
+            <p class="timeline__company">Digimarcon Middle East</p>
+            <ul class="timeline__bullets" role="list">
+              <li>Led front-of-house team for a major digital marketing conference</li>
+              <li>Managed attendee registration and badge distribution</li>
+              <li>Coordinated with speakers and session moderators on-site</li>
+              <li>Oversaw networking zone facilitation and delegate experience</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item reveal-up">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__content">
+            <div class="timeline__header">
+              <h3 class="timeline__role">Event Coordinator Assistant</h3>
+              <span class="timeline__date">2022 / 2024 / 2025</span>
+            </div>
+            <p class="timeline__company">Dubai Run — MOTUS ONE</p>
+            <ul class="timeline__bullets" role="list">
+              <li>Assisted in coordinating large-scale community run events</li>
+              <li>Supported route management and participant guidance</li>
+              <li>Handled real-time logistics across multiple event editions</li>
+              <li>Worked with cross-functional teams for seamless delivery</li>
+            </ul>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section class="education" id="education" aria-label="Education">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Background</span>
+        <h2 class="section-title">Education</h2>
+        <p class="section-sub"><em>Foundations that shaped my engineering and design thinking.</em></p>
+      </div>
+      <div class="education__grid">
+        <article class="edu-card reveal-up" tabindex="0">
+          <div class="edu-card__icon" aria-hidden="true">🎓</div>
+          <div class="edu-card__body">
+            <span class="edu-card__tag">Bachelor's Degree</span>
+            <h3 class="edu-card__title">Bachelor in Computer Science</h3>
+            <p class="edu-card__school">Bath Spa University, Ras Al Khaimah</p>
+            <span class="edu-card__date">2023 – 2026</span>
+          </div>
+        </article>
+        <article class="edu-card reveal-up" tabindex="0">
+          <div class="edu-card__icon" aria-hidden="true">📘</div>
+          <div class="edu-card__body">
+            <span class="edu-card__tag">Foundation Studies</span>
+            <h3 class="edu-card__title">IFS – Level 3</h3>
+            <p class="edu-card__school">Bath Spa University, Ras Al Khaimah</p>
+            <span class="edu-card__date">2022 – 2023</span>
+          </div>
+        </article>
+        <article class="edu-card reveal-up" tabindex="0">
+          <div class="edu-card__icon" aria-hidden="true">🏫</div>
+          <div class="edu-card__body">
+            <span class="edu-card__tag">Secondary School</span>
+            <h3 class="edu-card__title">Secondary School Certificate</h3>
+            <p class="edu-card__school">Pakistani School Ajman, UAE</p>
+            <span class="edu-card__date">2019 – 2021</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact" id="contact" aria-label="Contact">
+    <div class="container contact__container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Get in touch</span>
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-sub"><em>Want to build something? Send a message and I'll get back to you.</em></p>
+      </div>
+      <div class="contact__grid">
+        <div class="contact__form-wrap reveal-left">
+          <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
+            <div class="form-group">
+              <input type="text" id="name" name="name" class="form-input" placeholder=" " required autocomplete="name" />
+              <label for="name" class="form-label">Your Name</label>
+              <span class="form-error" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" class="form-input" placeholder=" " required autocomplete="email" />
+              <label for="email" class="form-label">Email Address</label>
+              <span class="form-error" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" class="form-input form-textarea" placeholder=" " required rows="5" aria-label="Message"></textarea>
+              <label for="message" class="form-label">Message</label>
+              <span class="form-error" role="alert"></span>
+            </div>
+            <div class="contact-form__actions">
+              <button type="submit" class="btn btn--solid magnetic">Send Message</button>
+              <a href="mailto:Faseehzhd@gmail.com" class="btn btn--outline magnetic">Email Instead</a>
+            </div>
+            <p class="form-success" id="formSuccess" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        <div class="contact__info reveal-right">
+          <div class="contact__links-block">
+            <h3 class="contact__block-title">Quick Links</h3>
+            <ul class="contact__link-list" role="list">
+              <li><a href="#projects" class="contact__link">Portfolio Projects</a></li>
+              <li><a href="#experience" class="contact__link">Experience Timeline</a></li>
+              <li><a href="#education" class="contact__link">Education</a></li>
+            </ul>
+          </div>
+          <div class="contact__links-block">
+            <h3 class="contact__block-title">Social</h3>
+            <ul class="contact__link-list" role="list">
+              <li><a href="https://www.instagram.com/mfaseeh15/" target="_blank" rel="noopener noreferrer" class="contact__link" aria-label="Instagram (opens in new tab)">Instagram ↗</a></li>
+              <li><a href="https://www.facebook.com/muhammad.faseeh.817699/" target="_blank" rel="noopener noreferrer" class="contact__link" aria-label="Facebook (opens in new tab)">Facebook ↗</a></li>
+              <li><a href="https://www.linkedin.com/in/muhammad-faseeh-53772a2a2/" target="_blank" rel="noopener noreferrer" class="contact__link" aria-label="LinkedIn (opens in new tab)">LinkedIn ↗</a></li>
+            </ul>
+          </div>
+          <div class="contact__links-block">
+            <h3 class="contact__block-title">Email</h3>
+            <div class="contact__email-row">
+              <a href="mailto:Faseehzhd@gmail.com" class="contact__link">Faseehzhd@gmail.com</a>
+              <button class="copy-btn" id="copyEmail" aria-label="Copy email address to clipboard" title="Copy email">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__container">
+      <a href="#hero" class="footer__logo" aria-label="Back to top">M Faseeh</a>
+      <p class="footer__copy">&copy; 2026 Muhammad Faseeh. All rights reserved.</p>
+      <div class="footer__actions">
+        <a href="#hero" class="footer__link">Back to top ↑</a>
+        <button class="theme-toggle" id="themeToggleFooter" aria-label="Toggle dark/light theme">
+          <span class="theme-toggle__icon" aria-hidden="true">◐</span> Theme
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/cursor.js" defer></script>
+  <script src="js/loader.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/carousel.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
