@@ -1,0 +1,104 @@
+/* ══════════════════
+   CUSTOM CURSOR — desktop only
+   Dot snaps to mouse; ring lags via JS LERP.
+   Both positioned with left/top set by JS.
+══════════════════ */
+@media (pointer: fine) {
+
+  /* Wrapper — zero size, just a z-index anchor */
+  .cursor {
+    position: fixed;
+    top: 0; left: 0;
+    width: 0; height: 0;
+    z-index: 9999;
+    pointer-events: none;
+  }
+
+  /* ── Inner dot (snaps exactly) ── */
+  .cursor__inner {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: #0C0C0C;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width  0.2s var(--ease-out),
+                height 0.2s var(--ease-out),
+                opacity 0.2s;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ── Outer ring (lags via JS) ── */
+  .cursor__ring {
+    position: fixed;
+    width: 34px;
+    height: 34px;
+    border: 1.5px solid #0C0C0C;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.3;
+    transition: width   0.35s var(--ease-out),
+                height  0.35s var(--ease-out),
+                opacity 0.35s var(--ease-out),
+                background 0.35s var(--ease-out),
+                border-color 0.35s var(--ease-out);
+    pointer-events: none;
+    z-index: 9998;
+  }
+
+  /* ── Hover state ── */
+  .cursor.expanded .cursor__ring {
+    width: 50px;
+    height: 50px;
+    opacity: 0.65;
+  }
+  .cursor.expanded .cursor__inner {
+    width: 4px;
+    height: 4px;
+  }
+
+  /* ── Project card hover — filled circle with label ── */
+  .cursor.show-label .cursor__ring {
+    width: 62px;
+    height: 62px;
+    opacity: 1;
+    background: #0C0C0C;
+    border-color: #0C0C0C;
+  }
+  .cursor.show-label .cursor__inner {
+    opacity: 0;
+  }
+
+  /* ── "View" label ── */
+  .cursor__label {
+    position: fixed;
+    font-family: var(--font-sans);
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  .cursor.show-label .cursor__label {
+    opacity: 1;
+    /* Label follows the ring — position set to ring coords via JS */
+  }
+}
+
+/* Dark mode */
+[data-theme="dark"] .cursor__inner   { background: #F3F0EB; }
+[data-theme="dark"] .cursor__ring    { border-color: #F3F0EB; }
+[data-theme="dark"] .cursor.show-label .cursor__ring  { background: #F3F0EB; border-color: #F3F0EB; }
+[data-theme="dark"] .cursor.show-label .cursor__label { color: #0C0C0C; }
+
+/* Touch devices — hide entirely */
+@media (pointer: coarse) {
+  .cursor, .cursor__inner, .cursor__ring, .cursor__label { display: none !important; }
+}
