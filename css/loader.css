@@ -1,0 +1,147 @@
+/* ══════════════════════════════════
+   PAGE LOADER
+   Full-screen intro that animates
+   out once the page is ready.
+══════════════════════════════════ */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;               /* below cursor (9999), above everything else */
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Exit animation — triggered by JS adding .loader--done */
+  transition: opacity 0.65s var(--ease-out),
+              visibility 0.65s var(--ease-out);
+}
+
+/* Slide the whole panel upward on exit */
+.loader--exit {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.75s var(--ease-out),
+              opacity   0.55s var(--ease-out);
+}
+
+/* Hide completely after transition */
+.loader--done {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ── Inner content ── */
+.loader__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  text-align: center;
+  /* Subtle fade-in on load */
+  animation: loaderFadeIn 0.5s var(--ease-out) both;
+}
+@keyframes loaderFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── Name block — mirrors hero exactly ── */
+.loader__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  line-height: 1;
+}
+
+.loader__hi {
+  font-family: var(--font-sans);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: var(--fw-thin);
+  letter-spacing: -0.01em;
+  color: var(--text-muted);
+  /* Letter by letter reveal */
+  overflow: hidden;
+  white-space: nowrap;
+  animation: revealText 0.6s var(--ease-out) 0.15s both;
+}
+
+.loader__name {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: var(--fw-bold);
+  font-size: clamp(2rem, 5.5vw, 4rem);
+  letter-spacing: -0.04em;
+  color: var(--text);
+  line-height: 1.05;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: revealText 0.7s var(--ease-out) 0.3s both;
+}
+
+@keyframes revealText {
+  from { opacity: 0; transform: translateY(0.5em); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Accent underline on the name — grows in */
+.loader__name::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: var(--accent);
+  margin-top: 4px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: growLine 0.6s var(--ease-out) 0.85s forwards;
+}
+@keyframes growLine {
+  to { transform: scaleX(1); }
+}
+
+/* ── Progress bar ── */
+.loader__bar-track {
+  width: clamp(160px, 30vw, 280px);
+  height: 1.5px;
+  background: var(--border);
+  border-radius: 1px;
+  overflow: hidden;
+}
+.loader__bar {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  border-radius: 1px;
+  transition: width 0.08s linear;   /* JS updates width continuously */
+}
+
+/* ── Percentage text ── */
+.loader__pct {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+  min-width: 3ch;
+  text-align: center;
+}
+
+/* Dark mode — background stays consistent */
+[data-theme="dark"] .loader { background: var(--bg); }
+
+/* Prevent scroll while loading */
+body.loading { overflow: hidden; }
+
+/* Reduced motion — skip animation, just fade quickly */
+@media (prefers-reduced-motion: reduce) {
+  .loader--exit {
+    transform: none;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  .loader__inner,
+  .loader__hi,
+  .loader__name { animation: none; opacity: 1; transform: none; }
+  .loader__name::after { animation: none; transform: scaleX(1); }
+}
